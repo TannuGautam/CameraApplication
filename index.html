@@ -8,35 +8,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <video controls autoplay></video>
-    <audio controls autoplay></audio>
+    <!-- video part -->
+    <div class = "video-container">
+        <video class = "video" autoplay></video>
+    </div>
 
-    <script>
-        let videoElement = document.querySelector("video");
-
-        let audioElement = document.querySelector("audio");
-
-        //user requirement send ie audio n video requirement
-
-        let constraint = {
-            audio : true, video : true
-        }
-
-        //promise
-        let usermediaPromise = navigator.mediaDevices.getUserMedia(constraint);
-
-        usermediaPromise.then(function (stream)
-        {
-            videoElement.srcObject = stream;
-
-            audioElement.srcObject = stream;
-        })
-        .catch(function (err)
-        {
-            alert("Please allow Microphone and Camera");
-        })
-
-    </script>
-    <!-- <script src="script.js"></script>     -->
+    <!-- recording part -->
+    <button class = "record round-btn">Record</button>
+    <button class = "click round-btn">Click</button>
+    <script src="script.js"></script>    
 </body>
 </html>
