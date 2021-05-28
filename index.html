@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,9 +28,24 @@
     <!-- timer part -->
     <div class = "timing">00:00:00</div>
 
+    <!-- zoom in zoom out -->
+    <div class = "zoom">
+        <div class = "zoom-in plus">
+            <i class="fas fa-plus-square icon"></i>
+        </div>
+        <div class = "zoom-out minus">
+            <i class="fas fa-minus-square icon"></i>
+        </div>
+    </div>
     <!-- recording part -->
-    <button class = "record round-btn">Record</button>
-    <button class = "capture round-btn">Capture</button>
+    <div class = "btn-container">
+        <button class = "record round-btn"></button>
+    </div>
+
+    <div class = "btn-container position-top"> 
+        <button class = "capture round-btn"></button>
+    </div>
+
     <script src="script.js"></script>    
 </body>
 </html>

@@ -6,11 +6,19 @@ let recordBtn = document.querySelector(".record");
 
 let captureImgBtn = document.querySelector(".capture");
 
+//adding colored filters
 let filterArr = document.querySelectorAll(".filter");
 
 let filterOverlay = document.querySelector(".filter_overlay");
 
 let filterColor= "";
+
+//zoomin n zoomout
+let zoominBtn = document.querySelector(".plus");
+
+let zoomoutBtn = document.querySelector(".minus");
+
+let scaleLevel = 1;
 
 //timer 
 let timings = document.querySelector(".timing");
@@ -87,7 +95,10 @@ recordBtn.addEventListener("click", function()
     if(isRecording == false)
     {
         mediarecordingObjectForCurrStream.start();
-        recordBtn.innerText = "Recording.....";
+        //recordBtn.innerText = "Recording.....";
+
+        //animation
+        recordBtn.classList.add("record-animation");
 
         //timer started --> startTimer() function called
         startTimer();
@@ -98,7 +109,10 @@ recordBtn.addEventListener("click", function()
         //stop timer -> stopTimer() function call
         stopTimer();
         mediarecordingObjectForCurrStream.stop();
-        recordBtn.innerText = "Record";
+        //recordBtn.innerText = "Record";
+
+        //animation
+        recordBtn.classList.remove("record-animation");
     }
     isRecording = !isRecording; // making it false if true
 })
@@ -116,6 +130,15 @@ captureImgBtn.addEventListener("click", function()
 
     let tool = canvas.getContext("2d");
 
+    //zoom part
+    tool.scale(scaleLevel,scaleLevel);
+
+    const x = (tool.canvas.width / scaleLevel - videoElement.videoWidth);
+
+    const y = (tool.canvas.height / scaleLevel - videoElement.videoHeight);
+
+    captureImgBtn.classList.add("capture-animation");
+
     tool.drawImage(videoElement, 0 , 0);
 
     //adding filters to video element that will be captured.
@@ -125,6 +148,7 @@ captureImgBtn.addEventListener("click", function()
 
         tool.fillRect(0,0,canvas.width,canvas.height);
     }
+
 
     let url = canvas.toDataURL();
 
@@ -137,6 +161,12 @@ captureImgBtn.addEventListener("click", function()
     a.click();
 
     a.remove();
+
+    //animation
+    setTimeout(function () {
+        captureImgBtn.classList.remove("capture-animation");
+    }, 1000)
+
 })
 
 //filter array
@@ -182,11 +212,32 @@ function startTimer()
     }
 
     clearObj = setInterval(fn, 1000);
-    
-    function stopTimer()
-    {
-        timings.style.display = "none";
-
-        clearInterval(clearObj);
-    }
 }
+
+
+function stopTimer()
+{
+    timings.style.display = "none";
+
+    clearInterval(clearObj);
+}
+
+//zoomin n zoomout 
+zoomoutBtn.addEventListener("click", function()
+{
+    if(scaleLevel > 1)
+    {
+        scaleLevel = scaleLevel - 0.1;
+        videoElement.style.transform = `scale(${scaleLevel})`;
+    }
+})
+
+zoominBtn.addEventListener("click", function()
+{
+    if(scaleLevel < 1.7)
+    {
+        scaleLevel = scaleLevel + 0.1;
+        videoElement.style.transform = `scale(${scaleLevel})`;
+    }
+})
+
