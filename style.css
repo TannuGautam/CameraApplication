@@ -142,3 +142,86 @@ body{
     color: rgb(20, 9, 9);
     font-size: 220%;
 }
+
+/* flip */
+.flip_img {
+    width: 4rem;
+    position: fixed;
+    top: 72%;
+    right: 41px;
+    background-color: #b72758;
+    height: 3rem;
+    border-radius: 6px;
+    z-index: 6;
+}
+
+.rotate {
+    padding-top: 15%;
+    display: flex;
+    justify-content: center;
+    font-size: 200%;
+}
+
+/* gallery */
+.gallerycol{
+    background-color: gray;
+}
+.gallery{
+    width:3rem;
+    height:3rem;
+    position: fixed;
+    height: 3rem;
+    z-index: 2;
+    width: 3rem;
+    bottom: 10vh;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    right: 50px;
+    background-color:gray;
+}
+
+.gallery-delete-button,
+.gallery-download-button {
+  border: none;
+  height: 10%;
+  display: block;
+  color: white;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.gallery-img-container img
+{
+    height: 80%;
+    display: block;
+    width: 100%;
+}
+
+.gallery-img-container{
+    width:25rem;
+    background:white;
+    height:25rem;
+    padding:2rem;
+    margin:2rem;
+}
+
+.gallery-back{
+    position: fixed;
+    right:20px;
+    bottom:20px;
+    height:6rem;
+    border-radius: 50%;
+    border: none;
+    background: black;
+    color:white;
+    font-size: 1.5rem;
+}
+
+.gallery-delete-button {
+    background: #d91d1d;
+  }
+  
+.gallery-download-button {
+    background: #291e1e;
+  }

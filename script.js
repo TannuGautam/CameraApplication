@@ -27,6 +27,9 @@ let counter = 0;
 
 let clearObj;
 
+//fliphorizontal
+let flipHorizontal = document.querySelector(".rotate");
+
 //user requirement send ie audio n video requirement
 
 let constraint = {
@@ -77,6 +80,8 @@ usermediaPromise.then(function (stream)
         a.click();
 
         recording = [];
+
+        addMediaToGallery(blob, "video");
     })
 })
 .catch(function (err)
@@ -115,6 +120,7 @@ recordBtn.addEventListener("click", function()
         recordBtn.classList.remove("record-animation");
     }
     isRecording = !isRecording; // making it false if true
+
 })
 
 
@@ -149,6 +155,7 @@ captureImgBtn.addEventListener("click", function()
         tool.fillRect(0,0,canvas.width,canvas.height);
     }
 
+    addMediaToGallery(canvas.toDataURL(), "img");
 
     let url = canvas.toDataURL();
 
@@ -241,3 +248,21 @@ zoominBtn.addEventListener("click", function()
     }
 })
 
+
+// //mirror
+// flipHorizontal.addEventListener("click", function()
+// {
+//     function flipImage(canvas, tool) {
+//         let scaleH = flipHorizontal ? -1 : 1; // Set horizontal scale to -1 if flip horizontal
+            
+//         let posX = flipHorizontal ? width * -1 : 0; // Set x position to -100% if flip horizontal 
+        
+//         tool.save(); // Save the current state
+
+//         tool.scale(scaleH); // Set scale to flip the image
+
+//         tool.drawImage(img, posX, canvas.width, canvas.height); // draw the image
+
+//         tool.restore(); // Restore the last saved state
+//     };
+// })

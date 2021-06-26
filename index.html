@@ -46,6 +46,22 @@
         <button class = "capture round-btn"></button>
     </div>
 
-    <script src="script.js"></script>    
+    <!-- <div class = "flip_img">
+        <i class="fas fa-undo rotate"></i>
+    </div> -->
+    <!-- gallery -->
+    <button class = "gallery " title = "Gallery">
+        <i class="fas fa-images icon gallerycol"></i>
+    </button>
+    <script src="dbScript.js"></script>
+    <script src="script.js"></script>
+    <script>
+        let galleryBtn = document.querySelector(".gallery");
+
+        galleryBtn.addEventListener("click", function()
+        {
+            location.assign("gallery.html");
+        });
+    </script>    
 </body>
 </html>
