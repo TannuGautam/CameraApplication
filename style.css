@@ -191,14 +191,16 @@ body{
   width: 100%;
 }
 
-.gallery-img-container img
+.gallery-img-container img,
+.gallery-vid-container video
 {
     height: 80%;
     display: block;
     width: 100%;
 }
 
-.gallery-img-container{
+.gallery-img-container,
+.gallery-vid-container{
     width:25rem;
     background:white;
     height:25rem;

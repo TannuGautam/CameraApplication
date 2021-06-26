@@ -73,7 +73,7 @@ usermediaPromise.then(function (stream)
 
         let a = document.createElement("a");
 
-        a.download = "file.mp4";
+        a.download = "video.mp4";
 
         a.href = url;
 
@@ -161,7 +161,7 @@ captureImgBtn.addEventListener("click", function()
 
     let a = document.createElement("a");
 
-    a.download = "file.png";
+    a.download = "image.png";
 
     a.href = url;
 
