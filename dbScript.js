@@ -14,7 +14,7 @@ request.onerror = function(e){
 request.onupgradeneeded = function(e)
 {
     //if upgrade needed
-    db = reuest.result;
+    db = request.result;
     db.createObjectStore("gallery", {keyPath: "mId"});
 };
 
