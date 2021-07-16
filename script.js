@@ -69,15 +69,15 @@ usermediaPromise.then(function (stream)
 
         const blob = new Blob(recording, { type: 'video/mp4'});
 
-        const url = window.URL.createObjectURL(blob);
+        // const url = window.URL.createObjectURL(blob);
 
-        let a = document.createElement("a");
+        // let a = document.createElement("a");
 
-        a.download = "video.mp4";
+        // a.download = "video.mp4";
 
-        a.href = url;
+        // a.href = url;
 
-        a.click();
+        // a.click();
 
         recording = [];
 
@@ -157,17 +157,17 @@ captureImgBtn.addEventListener("click", function()
 
     addMediaToGallery(canvas.toDataURL(), "img");
 
-    let url = canvas.toDataURL();
+    // let url = canvas.toDataURL();
 
-    let a = document.createElement("a");
+    // let a = document.createElement("a");
 
-    a.download = "image.png";
+    // a.download = "image.png";
 
-    a.href = url;
+    // a.href = url;
 
-    a.click();
+    // a.click();
 
-    a.remove();
+    // a.remove();
 
     //animation
     setTimeout(function () {
