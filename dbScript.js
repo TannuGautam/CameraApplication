@@ -92,6 +92,8 @@ function viewMedia()
 
                 img.src = cursor.value.media;
 
+                console.log(cursor.value.media);
+
                 imgContainer.appendChild(img);
 
                 //img deletion part

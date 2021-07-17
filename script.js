@@ -155,10 +155,14 @@ captureImgBtn.addEventListener("click", function()
         tool.fillRect(0,0,canvas.width,canvas.height);
     }
 
-    addMediaToGallery(canvas.toDataURL(), "img");
-
+    
     // let url = canvas.toDataURL();
 
+    // console.log(url);
+
+    addMediaToGallery(canvas.toDataURL(), "img");
+    
+    //console.log(canvas.toDataURL());
     // let a = document.createElement("a");
 
     // a.download = "image.png";
@@ -173,6 +177,9 @@ captureImgBtn.addEventListener("click", function()
     setTimeout(function () {
         captureImgBtn.classList.remove("capture-animation");
     }, 1000)
+
+
+    
 
 })
 
